@@ -59,6 +59,18 @@ jobs:
             image: debian:sid
             typ: debian
             allow-failure: true
+          -
+            image: ubuntu:18.04
+            typ: debian
+            allow-failure: false
+          -
+            image: ubuntu:20.04
+            typ: debian
+            allow-failure: false
+          -
+            image: ubuntu:21.10
+            typ: debian
+            allow-failure: false
     steps:
       -
         name: Checkout

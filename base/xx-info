@@ -107,7 +107,7 @@ fi
 
 vendor=""
 
-if [ "$XX_VENDOR" != "unknown" ] && [ "$XX_VENDOR" != "debian" ]; then
+if [ "$XX_VENDOR" != "unknown" ] && [ "$XX_VENDOR" != "debian" ] && [ "$XX_VENDOR" != "ubuntu" ]; then
   vendor="-${XX_VENDOR}"
 fi
 
@@ -265,7 +265,7 @@ case "$TARGETARCH" in
 esac
 
 XX_PKG_ARCH=$TARGETARCH
-if [ "$XX_VENDOR" = "debian" ]; then
+if [ "$XX_VENDOR" = "debian" ] || [ "$XX_VENDOR" = "ubuntu" ]; then
   XX_PKG_ARCH=${XX_DEBIAN_ARCH}
 elif [ "$XX_VENDOR" = "alpine" ]; then
   XX_PKG_ARCH=${XX_ALPINE_ARCH}
