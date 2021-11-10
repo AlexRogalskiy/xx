@@ -204,3 +204,10 @@ load 'assert'
   unset TARGETOS
   unset TARGETARCH
 }
+
+@test "checkpkg" {
+  run apt show wget
+  assert_success
+  run apt show wget-notexist
+  assert_failure
+}
